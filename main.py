@@ -26,7 +26,7 @@ def main() -> None:
         Player.objects.get_or_create(
             nickname=key,
             email=value["email"],
-            bio=value["bio"],
+            bio=value.get("bio", ""),
             race=race,
             guild=guild
         )
